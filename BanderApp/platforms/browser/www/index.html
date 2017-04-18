@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="./mdl/material.min.css">
         <script src="./mdl/material.min.js"></script>
         <link rel="stylesheet" href="./mdl/fonts/materialicons.css">
+
+        <script src="./js/api.js"></script>
+        <script src="./js/index.js"></script>
+
         <title>Bander</title>
     </head>
     <body>
@@ -23,20 +27,16 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="../index.html">Login</a>
+                <a class="mdl-navigation__link" href="../register.html">Register</a>
             </nav>
             </div>
         </header>
     <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
+        <span class="mdl-layout-title">Bander</span>
         <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="../index.html">Login</a>
+        <a class="mdl-navigation__link" href="../register.html">Register</a>
         </nav>
     </div>
     <main class="mdl-layout__content">
@@ -44,24 +44,28 @@
 
             <!-- Textfield with Floating Label -->
 
-            <form action="#">
+            <form action="https://stud.hosted.hr.nl/0894594/bander-api/login.php" method="POST" id="loginForm">
                 <div class="loginForm">
 
             
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="userName">
+                        <input class="mdl-textfield__input" type="text" id="userName" name="name">
                         <label class="mdl-textfield__label" for="username">Username</label>
                     </div>
 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="password" id="passWord">
+                        <input class="mdl-textfield__input" type="password" id="passWord" name="password">
                         <label class="mdl-textfield__label" for="password">Password</label>
                     </div>
 
                      <!-- Colored raised button -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored login-button">
+                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored login-button">
                         Login
                     </button>
+
+                    </br>
+
+                    <a href="../register.html">No account? Click here!</a>
 
 
                 </div>

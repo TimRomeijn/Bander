@@ -6,6 +6,12 @@
     display: block;
     margin: 0 auto;
 }
-.loginForm > .login-button {
-    text-align: center;
+
+.registerForm {
+    margin-top: 50px;
+}
+
+.registerForm > div {
+    display: block;
+    margin: 0 auto;
 }
