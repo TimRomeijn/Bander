@@ -44,34 +44,48 @@
     <main class="mdl-layout__content">
         <div class="page-content">
 
-            <!-- Textfield with Floating Label -->
+            <!--Profile overview-->
 
-            <form action="https://stud.hosted.hr.nl/0894594/bander-api/login.php" method="POST" id="loginForm">
-                <div class="loginForm">
-
-            
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="userName" name="name">
-                        <label class="mdl-textfield__label" for="username">Username</label>
-                    </div>
-
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="password" id="passWord" name="password">
-                        <label class="mdl-textfield__label" for="password">Password</label>
-                    </div>
-
-                     <!-- Colored raised button -->
-                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored login-button">
-                        Login
-                    </button>
-
-                    </br>
-
-                    <a href="../register.html">No account? Click here!</a>
-
-
-                </div>
-            </form>
+            <div id="profileOverview">
+                <ul class="demo-list-icon mdl-list">
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">account_circle</i>
+                            Profielfoto
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">person</i>
+                            Tim de gebruiker
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">email</i>
+                            Email
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">call</i>
+                            Telefoon nummer
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">music_note</i>
+                            Genres
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-icon">music_video</i>
+                            Instrumenten
+                        </span>
+                    </li>
+                </ul>
+            </div>
 
         </div>
     </main>

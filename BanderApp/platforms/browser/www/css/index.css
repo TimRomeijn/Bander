@@ -15,3 +15,12 @@
     display: block;
     margin: 0 auto;
 }
+
+#profileView {
+    display: block;
+    margin: 0 auto;
+    border: 1.5px solid blue;
+}
+.demo-list-icon {
+  width: 300px;
+}
