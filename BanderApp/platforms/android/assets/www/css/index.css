@@ -6,6 +6,21 @@
     display: block;
     margin: 0 auto;
 }
-.loginForm > .login-button {
+
+.registerForm {
+    margin-top: 50px;
+}
+
+.registerForm > div {
+    display: block;
     margin: 0 auto;
+}
+
+#profileView {
+    display: block;
+    margin: 0 auto;
+    border: 1.5px solid blue;
+}
+.demo-list-icon {
+  width: 300px;
 }
