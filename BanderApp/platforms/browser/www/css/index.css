@@ -24,3 +24,6 @@
 .demo-list-icon {
   width: 300px;
 }
+.mdl-layout__header {
+    background-color: lightgreen;
+}

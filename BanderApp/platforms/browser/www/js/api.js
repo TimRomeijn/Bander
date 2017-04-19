@@ -2,10 +2,11 @@ var API = {
     baseUrl: "https://stud.hosted.hr.nl/0894594/bander-api/",
     endPoints: {
         login: "login.php",
-        register: "register.php"
+        register: "register.php",
+        profile: "getProfileById.php"
     },
 
-    apiRequest: function(method = "GET", endpoint, data ) {
+    apiRequest: function(method = "GET", endpoint, data = {} ) {
         var result = null;
         $.ajax({
             type: method,
