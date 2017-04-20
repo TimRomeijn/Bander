@@ -1,9 +1,20 @@
 $(document).ready(function() {
     listData(functions.getProfileData(8));
-    
-    $(buttons.songButton).on("click", function(e) {
+
+        //function to change add recording style to stop style onclick
+    $(buttons.songButton).add(buttons.techniqueButton).add(buttons.sampleButton).on('click', function(e){
         e.preventDefault();
-        
+        if($(this).has('i')){
+            if($(this).find("i").text() == "add"){
+                $(this).find("i").text("stop");
+                recordAudio();
+            }
+            else {
+                $(this).find("i").text("add");
+                stopRecording();
+                console.log("hide the stop");
+            }
+        }
     })
 });
 
@@ -33,20 +44,22 @@ function listData(profile) {
     // $(instrument_name).append(Api.endPoints.profile);
 }
 
+//list of buttons
 var buttons = {
     songButton: $("#addSong"),
     techniqueButton: $("#addTechnique"),
     sampleButton: $("#addSample")
-}
-            
+};
+
+var mediaRec = null;
+
+//function where audio is created and recorded with 10 second interval            
 function recordAudio() {
-    console.log("start recoding");
-    var src = "myrecording.mp3";
-    var mediaRec = new Media(src,
+    mediaRec = new Media("myrecording.mp3",
         // success callback
         function() {
             console.log("recordAudio():Audio Success");
-            playAudio(src);
+            playAudio("myrecording.mp3");
         },
 
         // error callback
@@ -54,15 +67,13 @@ function recordAudio() {
             console.log("recordAudio():Audio Error: "+ err.code + err.message);
         }
     );
-
-    // Record audio
     mediaRec.startRecord();
-
-    // Stop recording after 10 seconds
-    setTimeout(function() {
-        mediaRec.stopRecord();
-    }, 10000);
 }
+
+function stopRecording() {
+     mediaRec.stopRecord();
+}
+
 function playAudio(url) {
     // Play the audio file at url
     var my_media = new Media(url,
