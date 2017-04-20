@@ -1,18 +1,36 @@
 $(document).ready(function() {
     listData(functions.getProfileData(8));
 
-        //function to change add recording style to stop style onclick
+    //function to change add recording style to stop style onclick and start and stop record
     $(buttons.songButton).add(buttons.techniqueButton).add(buttons.sampleButton).on('click', function(e){
         e.preventDefault();
         if($(this).has('i')){
-            if($(this).find("i").text() == "add"){
+            if($(this).find("i").text() == "fiber_manual_record"){
                 $(this).find("i").text("stop");
                 recordAudio();
             }
             else {
-                $(this).find("i").text("add");
+                $(this).find("i").text("fiber_manual_record");
                 stopRecording();
                 console.log("hide the stop");
+            }
+        }
+    })
+
+    //function to start recorded audio and pause it
+    $(buttons.playSongButton).add(buttons.playTechniqueButton).add(buttons.playSampleButton).on('click', function(e){
+        console.log("play functie staat aan");
+        e.preventDefault();
+        if($(this).has('i')){
+            if($(this).find("i").text() == "play_arrow"){
+                $(this).find("i").text("pause");
+                playAudio();
+                console.log("play audio");
+            }
+            else {
+                $(this).find("i").text("play_arrow");
+                pauseAudio();
+                console.log("pause audio");
             }
         }
     })
@@ -48,10 +66,15 @@ function listData(profile) {
 var buttons = {
     songButton: $("#addSong"),
     techniqueButton: $("#addTechnique"),
-    sampleButton: $("#addSample")
+    sampleButton: $("#addSample"),
+    playSongButton: $("#playSong"),
+    playTechniqueButton: $("#playTechnique"),
+    playSampleButton: $("#playSample"),
 };
 
 var mediaRec = null;
+
+var my_media = null;
 
 //function where audio is created and recorded with 10 second interval            
 function recordAudio() {
@@ -71,10 +94,13 @@ function recordAudio() {
 }
 
 function stopRecording() {
-     mediaRec.stopRecord();
+    if(mediaRec != null){
+        mediaRec.stopRecord();
+    }
 }
 
-function playAudio(url) {
+// function to play the recorded audio
+function playAudio( url = "myrecording.mp3") {
     // Play the audio file at url
     var my_media = new Media(url,
         // success callback
@@ -89,4 +115,10 @@ function playAudio(url) {
     // Play audio
     my_media.play();
 }
-// start audio capture
+
+//pause the playing audio
+function pauseAudio() {
+    if(my_media != null){
+        my_media.pause();
+    }
+}
