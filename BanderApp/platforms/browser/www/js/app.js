@@ -1,9 +1,19 @@
 $(document).ready(function() {
     listData(functions.getProfileData(8));
-    
-    $(buttons.songButton).on("click", function(e) {
+
+        //function to change add recording style to stop style onclick
+    $(buttons.songButton).add(buttons.techniqueButton).add(buttons.sampleButton).on('click', function(e){
         e.preventDefault();
-        
+        console.log(buttons);
+        if($(this).has('i')){
+            if($(this).find("i").text() == "add"){
+                $(this).find("i").text("stop");
+            }
+            else {
+                $(this).find("i").text("add");
+                console.log("hide the stop");
+            }
+        }
     })
 });
 
@@ -33,12 +43,16 @@ function listData(profile) {
     // $(instrument_name).append(Api.endPoints.profile);
 }
 
+//list of buttons
 var buttons = {
     songButton: $("#addSong"),
     techniqueButton: $("#addTechnique"),
     sampleButton: $("#addSample")
 }
-            
+
+
+
+//function where audio is created and recorded with 10 second interval            
 function recordAudio() {
     console.log("start recoding");
     var src = "myrecording.mp3";
