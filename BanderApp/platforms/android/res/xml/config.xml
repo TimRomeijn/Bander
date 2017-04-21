@@ -15,7 +15,8 @@
     <feature name="Media">
         <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
     </feature>
-    <name>bander</name>
+    <name>Bander</name>
+    <icon src="www/img/favicon.png" />
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>

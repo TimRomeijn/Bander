@@ -102,7 +102,7 @@ function stopRecording() {
 // function to play the recorded audio
 function playAudio( url = "myrecording.mp3") {
     // Play the audio file at url
-    var my_media = new Media(url,
+    my_media = new Media(url,
         // success callback
         function () {
             console.log("playAudio():Audio Success");
